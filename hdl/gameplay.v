@@ -91,11 +91,11 @@ module gameplay(
 				// Balls init
 				
 				always @ (posedge reset) begin
-					ball_speed[i] <= i[1:0];	// Depends on i to get different speed on start
+					ball_speed[i] = i[1:0];	// Depends on i to get different speed on start
 				end
 				
 				always @(*) begin
-					ball_run[i] <= game_run;	// Set instance run bit for every ball
+					ball_run[i] = game_run;	// Set instance run bit for every ball
 				end
 
 				// Check for ball - walls collisions
